@@ -17,7 +17,7 @@
           <input type="color" v-model="selectedColors.laces" @input="() => updateColor('laces')" />
         </label>
         <label>
-          Soles Color:
+          Front tab Color:
           <input type="color" v-model="selectedColors.soles" @input="() => updateColor('soles')" />
         </label>
         <label>
@@ -29,7 +29,7 @@
           <input type="color" v-model="selectedColors.backTab" @input="() => updateColor('backTab')" />
         </label>
         <label>
-          Bottom Color:
+          Bottom Soles Color:
           <input type="color" v-model="selectedColors.bottom" @input="() => updateColor('bottom')" />
         </label>
         <label>
@@ -323,6 +323,45 @@ watch(() => selectedColors.value.logo, (newColor) => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+/* Force readable text inside the white sidebar */
+.sidebar,
+.sidebar * {
+  color: #1f2937 !important;  /* dark gray */
+}
+
+.sidebar {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+
+/* Inputs/buttons look good on light bg */
+.sidebar input[type="color"],
+.sidebar select,
+.sidebar button {
+  background: #fff;
+  color: #1f2937 !important;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: .35rem .5rem;
+}
+
+/* Tidy layout */
+.sidebar label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar input[type="color"] {
+  width: 44px;
+  height: 32px;
+  padding: 0;
+  border-radius: 4px;
 }
 
   </style>
