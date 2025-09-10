@@ -268,16 +268,40 @@ watch(() => selectedColors.value.logo, (newColor) => {
     gap: 2rem;
     padding: 1rem;
     position: relative;
+    border-radius: 20px;
+    
   }
   
   .three-container {
-    width: 60vw;
-    height: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    background-color: #f4f4f4;
-  }
-  
+  width: 60vw;
+  height: 600px;
+
+  /* rounded edges */
+  border-radius: 20px;
+
+  /* pop effect */
+  background: rgba(255, 255, 255, 0.9);   /* semi-transparent white */
+  backdrop-filter: blur(6px);             /* glassmorphism effect */
+  -webkit-backdrop-filter: blur(6px);     /* Safari support */
+
+  /* shadow for depth */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+
+  /* subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+}
+
+.three-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: transparent;     /* just in case */
+}
+
   .customize-btn {
     position: absolute;
     top: 1rem;
@@ -292,6 +316,7 @@ watch(() => selectedColors.value.logo, (newColor) => {
     cursor: pointer;
     transition: background-color 0.2s;
   }
+
   .customize-btn:hover {
     background-color: #005dc1;
   }

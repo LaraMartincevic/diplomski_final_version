@@ -19,6 +19,13 @@ const logoColor = ref('#ffffff')
 
 
 <style>
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -26,11 +33,22 @@ body {
 }
 
 .main-section {
-  min-height: 80vh;
+  flex: 1;
+
+  /* center your 3D container as before */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+
+  /* wallpaper behind the 3D area only */
+  background-image: url('/wallpaper.jpg'); /* file in /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* avoid extra whitespace that can push things */
+  padding: 0;
+  margin: 0;
 }
 
 #three-container {
